@@ -1,4 +1,4 @@
-name: LIVESTREAM FFMPEG
+name: Live
 
 on:
   workflow_dispatch:
