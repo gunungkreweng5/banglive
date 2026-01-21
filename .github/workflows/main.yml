@@ -1,4 +1,4 @@
-name: Live
+name: LIVE
 
 on:
   workflow_dispatch:
@@ -12,6 +12,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: install ffmpeg
+        run: |
+          sudo apt update -qq
+          sudo apt install -y ffmpeg
+
       - name: cek ffmpeg
         run: ffmpeg -version
 
