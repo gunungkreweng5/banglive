@@ -1,4 +1,4 @@
-name: LIVE
+name: LIVESTREAM FFMPEG
 
 on:
   workflow_dispatch:
@@ -14,11 +14,9 @@ jobs:
     steps:
       - name: install ffmpeg
         run: |
-          sudo apt update -qq
-          sudo apt install -y ffmpeg
-
-      - name: cek ffmpeg
-        run: ffmpeg -version
+          sudo add-apt-repository ppa:ubuntuhandbook1/ffmpeg7 -y > /dev/null
+          sudo apt update -qq > /dev/null
+          sudo apt install ffmpeg -y -qq > /dev/null
 
       - name: live stream
         shell: bash
