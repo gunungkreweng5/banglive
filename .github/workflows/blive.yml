@@ -1,0 +1,21 @@
+name: LIVESTREAM FFMPEG
+
+on:
+  workflow_dispatch:
+    inputs:
+      ffmpegcom:
+        description: 'Command ffmpeg'
+        required: true
+
+jobs:
+  live-streaming:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: cek ffmpeg
+        run: ffmpeg -version
+
+      - name: live stream
+        shell: bash
+        run: |
+          ${{ inputs.ffmpegcom }}
